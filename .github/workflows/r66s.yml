@@ -227,28 +227,28 @@ jobs:
         🛠 密码：password" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
     
-    - name: 自动发布固件到 Releases
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
-      with:
-        name: ${{ steps.tag.outputs.release_date }} FastRhino-R66S-linux-固件下载
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+#    - name: 自动发布固件到 Releases
+#      uses: softprops/action-gh-release@v1
+#      if: steps.tag.outputs.status == 'success' && !cancelled()
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
+#      with:
+#        name: ${{ steps.tag.outputs.release_date }} FastRhino-R66S-linux-固件下载
+#        tag_name: ${{ steps.tag.outputs.release_tag }}
+#        body_path: release.txt
+#        files: ${{ env.FIRMWARE }}/*
 
-    - name: 删除运行记录
-      uses: Mattraks/delete-workflow-runs@v2
-      with:
-        retain_days: 3     #保留最后多少记录不删除
-        keep_minimum_runs: 0
+#    - name: 删除运行记录
+#      uses: Mattraks/delete-workflow-runs@v2
+#      with:
+#        retain_days: 3     #保留最后多少记录不删除
+#        keep_minimum_runs: 0
 
-    - name: 删除自动发布的旧固件
-      uses: dev-drprasad/delete-older-releases@v0.2.1
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 20        #保留多少个releases不删除
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
+#    - name: 删除自动发布的旧固件
+#      uses: dev-drprasad/delete-older-releases@v0.2.1
+#      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+#      with:
+#        keep_latest: 20        #保留多少个releases不删除
+#        delete_tags: true
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
