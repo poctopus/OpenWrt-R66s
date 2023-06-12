@@ -8,12 +8,6 @@
 
 
 
-![2](https://github.com/popeyema/OpenWrt-R66s/assets/83998087/80057560-c814-4ffc-a451-73da76c69dc3)
-
-
-
-
-
 ##### 源码和脚本来自
 
 - [Lean](https://github.com/coolsnowwolf/lede)
