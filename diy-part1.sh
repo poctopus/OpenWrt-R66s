@@ -11,7 +11,7 @@
 # =================================================================
 
 # 执行命令来切换内核
-#sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' target/linux/rockchip/Makefile
 sed -i 's/KERNEL_TESTING_PATCHVER:=6.1/#KERNEL_TESTING_PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 # 添加软件源
