@@ -25,7 +25,7 @@ rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 
 # 添加额外软件包
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
+# git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 
 # 科学上网插件
